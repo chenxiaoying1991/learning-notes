@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片懒加载</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        div{
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+        }
+        ul li{
+            width: 100%;
+            height: 700px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+        }
+        ul li img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>
+                <img src="image/Android.png" alt="" data-original="image/1.jpg">
+            </li>
+            <li>
+                <img src="image/Android.png" alt="" srcset="" data-original="image/2.jpg">
+            </li>
+            <li>
+                <img src="image/Android.png" alt="" srcset="" data-original="image/3.jpg">
+            </li>
+            <li>
+                <img src="image/Android.png" alt="" srcset="" data-original="image/4.jpg">
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/lazyload.js"></script>
+<script type="text/javascript" charset="utf-8">
+    $(function() {
+        $("img").lazyload({ event : "click"});
+    });
+</script>
+</html>
