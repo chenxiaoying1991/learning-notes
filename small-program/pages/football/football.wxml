@@ -1,0 +1,46 @@
+
+<view class='football-box'>
+  <view>
+    <text>{{text}}</text>
+  </view>
+  <swiper indicator-dots='true' autoplay='true' duration='1000' bindchange='listenSwiper'>
+    <swiper-item>
+      <view class='swiper-first'></view>
+    </swiper-item>
+    <swiper-item>
+      <view class='swiper-seconed'></view>
+    </swiper-item>
+    <swiper-item>
+      <view class='swiper-therr'></view>
+    </swiper-item>
+  </swiper>
+  <view class='icon-box'>
+      <!-- 成功图标 -->
+      <icon type='success' size='40'></icon>
+      <!-- 安全成功标识图标 -->
+      <icon type='safe_success' size='40'></icon>
+      <!-- 提示信息图标 -->
+      <icon type='info' size='40'></icon>
+      <!-- 带圆的信息提示图标 -->
+      <icon type='info_circle' size='40'></icon>
+      <!-- 改变颜色success -->
+      <icon type='clear' size='40'></icon>
+  </view>
+<view>
+  <progress percent='80' show-info='true' stroke-width='6' color='pink' active='true'></progress>
+</view>
+<!-- 按钮button --> 
+<button type='defaule' bindtap='clickButton' style='width:100%'>Default</button>
+<button type='primary' disabled='true' loading='true' style='width:100%'>Primary</button>
+<button type='warn' style='width:100%'>warn</button>
+
+<!-- checkbox 绑定事件  绑定数据-->
+<checkbox-group bindchange="listenCheckChange">
+  <label style='display:flex;' wx:for-items="{{items}}">
+    <checkbox value="{{item.name}}" checked='{{item.checked}}'>
+    {{item.value}}
+    </checkbox>
+  </label>
+</checkbox-group>
+
+</view>

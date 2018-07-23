@@ -1,0 +1,24 @@
+/* pages/football.wxss */
+.football-box{
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+}
+
+.swiper-first{
+  background: gold;
+  height: 300rpx;
+}
+.swiper-seconed{
+  background: darkcyan;
+  height: 300rpx
+}
+.swiper-therr{
+  background: bisque;
+  height: 300rpx;
+}
+.icon-box{
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+}
