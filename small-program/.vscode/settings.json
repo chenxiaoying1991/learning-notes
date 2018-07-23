@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+      "*.wpy": "vue",
+      "*.wxml": "html",
+      "*.wxss": "css"
+    },
+    "editor.fontSize": 18,
+    "[markdown]": {
+      "editor.quickSuggestions": true
+    },
+    "vetur.validation.template": false
+  }
