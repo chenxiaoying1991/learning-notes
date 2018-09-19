@@ -1,0 +1,227 @@
+/**index.wxss**/
+
+.index-page-box {
+    position: relative;
+    width: 100%;
+    height: 100vh
+  }
+  
+  .help-image {
+    display: inline-block;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0rpx;
+  }
+  
+  /* 同级的盒子 */
+  
+  .same-level-box {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0rpx;
+  }
+  
+  .help-list-box {
+    width: 670rpx;
+    height: 430rpx;
+    background: #FB4949;
+    margin-top: 397rpx;
+    margin-left: 40rpx;
+    border: 1px solid #FB4949;
+    border-radius: 16rpx;
+  }
+  
+  .information-rule {
+    width: 100%;
+    height: 95rpx;
+    padding: 0 13rpx;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    color: #fff;
+  }
+  
+  .my-infor {
+    width: 56rpx;
+    height: 56rpx;
+    border-radius: 50%;
+    background: goldenrod;
+  }
+  
+  .user-name {
+    font-size: 30rpx;
+    font-family: PingFangSC-Regular;
+    color: rgba(255, 255, 255, 1);
+    margin-left: 17rpx;
+  }
+  
+  .game-rule {
+    font-size: 30rpx;
+    font-family: PingFangSC-Regular;
+    color: rgba(255, 255, 255, 1);
+    margin-left: 240rpx
+  }
+  
+  .help-list-banner {
+    width: 100%;
+    height: 240rpx;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .help-list-banner .banner-img{
+    width: 100%;
+    height: 240rpx;
+  }
+  .help-list-number {
+    width: 100%;
+    height: 240rpx;
+    padding: 0 13rpx;
+    box-sizing: border-box;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  
+  .help-lucky-number {
+    position: relative;
+    width: 94rpx;
+    height: 130rpx;
+  }
+  
+  .help-lucky-number image {
+    position: absolute;
+    top: 0;
+    width: 94rpx;
+    height: 130rpx;
+    z-index: 1;
+  }
+  
+  .lucky-n {
+    position: absolute;
+    top: 56rpx;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    font-size: 50rpx;
+    font-family: PingFangSC-Regular;
+    color: rgba(255, 255, 255, 1);
+  }
+  
+  /* 底部的内容 */
+  
+  .help-information {
+    width: 670rpx;
+    height: 95rpx;
+    padding: 0 13rpx;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .help-information .number-view {
+    width: 57rpx;
+    height: 57rpx;
+  }
+  /* 
+  .help-information .number-view image {
+    width: 57rpx;
+    height: 57rpx;
+  } */
+  
+  .task-num {
+    width: 100%;
+    margin-top: 89rpx;
+    text-align: center;
+    font-size: 24rpx;
+    font-family: PingFangSC-Regular;
+    color: rgba(255, 148, 42, 1);
+  }
+  
+  .lucky-num {
+    width: 100%;
+    margin-top: 20rpx;
+    text-align: center;
+    width: 670rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    background: linear-gradient(to right, rgba(251, 61, 116, 1), rgba(255, 133, 78, 1), rgba(255, 219, 42, 1));
+    border-radius: 43rpx;
+    margin-left: 40rpx;
+    color: #FFFFFF;
+    font-size: 48rpx;
+  }
+  .lucky-num-red{
+    background: #E94A48;
+  }
+  /* 点击幸运数字出现的弹窗 */
+  .lucky-pop{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background:rgba(0, 0, 0, 0.5 );
+    z-index: 3;
+    
+  }
+  .lucky-phone{
+    width:  670rpx;
+    height: 440rpx;
+    margin-left: 40rpx;
+    background:rgba(255,255,255,1);
+    border-radius:16px;
+    padding: 73rpx 86rpx 0rpx 86rpx;
+    box-sizing: border-box;
+    text-align: center;
+    position: absolute;
+    top: 301rpx;
+    z-index: 4;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAhsAAAD/CAMAAABvs+QyAAACcFBMVEUAAAD1jiT9yTT+1Cn9zTD8uEL8uEL8uEH8uEL8uEH8uEH8uEH8uEH8uEL8uEH8uEL8uEL8uEL8uEL8uEH8uEH8uEL8uEL8uEH8uEH8uEH8uEH/9gT8uEL8uEH8uEH8uEH8uEH/9gT8uEL8uEH8uEL8uEL/9gT8uEH8uEL8uEEAtekAtekAten/9gQAten8uEH8uEH8uEH8uEH/9gT8uEH/9gT/9gQAtenrDg0AtekAten/9gT8uEL8uEH/9gQAten8uEL/9gT/AgH/AgH8uEIAten/9gT/9gT8uEH8uEH/9gT8uEH8uEH8uEL/AgH/9gQAteoAten/AgH8uEEAten/AgH/AgH8uEIAten/AgEAten/AgH8uEH8uEIAten/9gQAten/9gT/AgEAteoAten/9gQAter/9gQAten/9gT/9gT8uEH8uEH8uEH8uEL/9gQAten8uEL/9gQAten8uEH/AgH/9gT/9gT/9gT/9gT/9gT/9gQAtekAten/AgH/9gT/9gQAten/9gQAtekAten8uEIAten8uEH8uEL/AgEAten8uEEAter/9gT8uEH/9gT/9gQAtun/9gT/AgH/AgH/AgH/9gT/AgEAten/9gT/9gT/9gQAten8uEH8uEEAten/9gT/9gT/9gQAter/AgH/AgH/AgH/9gT/AgH/AgEAten/9gT/AgH/AgEAten8uEH/AgH/9gT/AgFKSUn/9gT/AgH/9gT/AgEAten/9gQAtur/AgFKSUn/9gT/AgFKSUn/9gT/9gT/AgH/AgH/AgH/AgH/AgH/9gT/9gT/9gT/9gT/AgEAten/AgH/9gT8uEJP1k95AAAAzHRSTlMAAQIFBAzp5O0J/Pj03LybIq42HBDY1Ek6KBL48crGw792UyUgFQjgoUQMBP3p6M63sldTTjgqEQQCysqVemBDPhkXDv753qSDfXxybGJbWVM1NRgXCPqqoYRpRkAxI+/j4uHd2M67urSYj4Z3aGU/PTwzLiwrHBUPDQv79O7t2dPQxcSrpZmQjHZxWUtLKx4SCPPTzcSdmpKJcWlgXy4nJyUhHBQK8727k4mCfGxcWzwwHxC1taeLgHl4Ti4uJB8b/efj2KZkREKuqqLNyQzQAAALa0lEQVR42uzd908TYRwG8OdahiwpqKBUKzUiUkBFxEqBIiiIIMooDhCRZXBvREVxT1y4N+4RB8a44vYHY/R6/ZdsCQYILWlDSbjz+SR3f8Cbb973eb/33h2GrlmgQSAA2TIf2uyOkgqQ95V1LHx++Xg25Ktk2eOa88dBXlfyx1qz2PrsPuSq7N0Pq9W6+KcA8q6y53utdhdLZDu0Xy5YHd7MAXnXg2WLrXY1HyFXX85bHS7KeVkcmh4866yN8/KdN+a8sTo84bzhbaqSi/bF+uHl+yrI1c+avda9jxeCvK7i8oULyzogX9kfnzx5ViHfMD2EzdpeUpEt2xXFYdaDMoaNwSHIvPVFRERERERERP8FNYicKd12eoQvlGcSaIA0C3S6tcuVN3WokxeBBsR3QcRU/8Bpm2X9yMSZMy3130ADMSY6qCB8uG1+ABTmTlt9I2gg4vyCKpFuC1Vc4mivTrsLoQnkmsGSin5oom2TC3VzCxQVOM6kbEw25yaazR+up4BcSN16onwF+rM+ZJhfcNJpJeUNtflRVXX1bilxd9VuvaKK3qsM5Xtqy+PRj9IN08LS4xQ1gj7XJEnbJtlVJZp9QM4Zn4riUiP6tW12lC/6ku8RUcyct0avb5Eu6fOTs0AuGN7niEstcMl1GURNXL4NMqU6ix14JLU37QK5FF++R2wwwmMxmrVhYeMOr9dAtg5of4H6U9Qsmu4h3gBDPNwXVRgWGxyhGxY4frZck0hWmvYUyJVUnDNkrhRX3sjMPOHYrrgtanpI7PDpL08uiLZFj4Y8Za1Om6mkzZdXnbvXWlT04shKMeegyVTXPOWKBe6aHWYLDfeFUBo5LjA0BvL0aia3KC47G0dW1daamhNEUcwRxQSxLhNuUmeM1YWjU6G/XxxIYc69z7HXRBd7gTQ3FMNNI5bY8tToFDN5bp5cEwe5knolQewqjin76xoaGooscFNl9NgZ6JJnmzwSpDAvTHX7TYeW1oriqtbWzNtbDXBXpS54gg86qULnHlXcYziytJZnbiq2PE0QjxiBeLhv4hLbsX9rSsTY9TJukJIrqQb7dSNHPGSERwI2BMVOD4BdVEFw7C2QQt3YIx68Dc9okoJ0EzSl0GSM8l/LKKpYjsZoMTyjjkwKjDiWkZ7uHzJfwwaSYhWbclZthafC8yKCQ2L9h2eMZANJuYwnrrwwwnPhBaFHb0b6MogqmeU2UuExQQVhYoCcD3EQERERERERERERERERERERERER/c94ppyc+3aKX2slp+7q66/yRSVyYmd+i3SAPw+gvhrNuVLuagHdBKYPcvDR75Pa9J/Rw+vXIMKO5Fyp+u0Z9PTpK4gmXU+T2vJT0MtXzhsE4XO9lDgvywcA8wb1olokaddsBFEfQsrbee3cvpIzOxvvgMgpfoGFiIiIiIiIiIiIiIiIiIg84wOoHXceU6HeJv16tWXRlmTzKXNyFoi6Cea0tKqWFm1ulTb3Ooi6qfTfJQetpNWyNqiXlKu/Vz+6lL8m/1r+XRD11LhrRzuamnAWREREREREREREREREREREREQ0qAQgBioQ9amMmMiMdfPjYkDUW1Rh0jA/W3DIsUoQ/WXvvn+TiqI4gB/eg8djlw0VCgK14IJi3TWiNmq1Wo2jjrpHHXXUvfduXD+oMW6NxpFonHFF44oxAd6/JJVS4MEP/gDGp99PXvJ+fzm599zz7j03V/UoLec2TjyqU0dMBJClWs+5JppYMociDcYKAujh96iPKyiFuV4lTEZCCll1vNdPaU1qvYUAMtY31FM3h8vqJ4BusvXCWiYTG7zNSQDdGJ86SN3smoiKADKcVl2MfgkYhEZcDwVZ7AlBb1cQKWaM4m0ocECuBRHBOtnu6zyq0U3BEhbyOI5yWr5Gq6m6hmwDRCquGYK2lvZWFDdKr1LqGZyKcaoqKglKTeW7NmULSwBi1T4bHzagZgSF7F7eG9bWY64GMbbRpffbtXwMyz8QUawVgtWtNUoHYgNE5J1KTbBFazQjNkDM3B7mhUgdAYjJzdGJJ+owakAxbKBaVvyyAAYhA0UE/L4nJqcF0QFiFY0eN8fVrjMTQC5VzMDVKCMeXtMSI4AsxqRXuqP2kD/qVR/FmQ/IUdmu9oYsRKyqw8NPltCuCJZUKP6X15mIJtr9jZsaPH6p/MJnLK2j6ps6CMqHcdTY/JS2RalzSCU2FOttaqW6NkBQNrJWTj+D0pw2V6tUYsNcJRgb3QJqvOVk4t1bKM1hVZqkEhtnlEon1QvtBOVjruJDlDaRq62WSmxUWK1Rh14YRVA+7ChBH2NTb3JYtetIKhQGQadUe1oJysjvEfTrQgHnZGNDbYVUhg2iDoPOa/QpCMqI8YUbrPqwV6fVSyqz8zudZ6QTyhIl6wjqrGGlfqJdQpUv+EMUC6Z0dsRw6AMKyYhYOQEAAAAAAAAAAAAAwJ837CMBFPX+PQEU9ZwAAAAAAAAAAP4tOGgCBbaP2Xmrz64h587idgbIM2b16jVtE1a3TXjxYwMBZLGPkruTqafLFQLIYt8MODBg5IEBbSNXTBhDADmGfB+0YdPpTbc3bN+GbBTysakHq5T/ksWxxe8k9MIGsRmdeo/b3bJ2ATqoQB75dYNO4K16DVcVxaQBuSqDGmUw5AzZW3i3gwB6MD4tN8VCcpKbDep6pByQ18jvuEVGKcwZXRhN9CFrhke9Xka/sC1aHwFkmG0aB6UxQaEJ2Sj0qNRpTJRmqRXakXBAD9YoTO7pk+6SVOdSKLeoy2OiLoG1ggf9KSF/oRJ5orjuj9W6lE3YuSMpMjmVlWyBscHqNno4wdZoRioqKbcHNe+ksrreXhUWOLexDpeLSgp77tGhkYOovCqr657UhXBvlsQMeTQ+Ob6Zyg+ZhtT06b0k2evNUwIQ2d58IDlg9U70twexPs2HkslJGDWgQJ9Bh5KLJoxhqUQYorsE/4TBbcnkmsFUKszY+SffbSX4F2wa+enVTTmVyLCtD5be+/oNwfFP2NHcezCVzKy59xKJxOy5swikj9nBsFQyzy4kurwcRwD5tu5LdLmPdBQKzE2kfMacAkWcTHz5cmkrfrVCEfNPTv1AAMX8Rh6KO6uhKItpnc9JAAXMjTWcMtJBACLsFN7ldWuCOE4PYqp64USgzhXGBjAQY48LTRR1WbFtFAp0qsPHazRHcbYNCswwcFxNrZ0AxJiAz37Nj5ZvgNIXAAAA/G36UdrQGwSQo+/0zQupy52Hc071I4CMfldXjTi2mYiGvh4YH7GQADKGHonH98zZSMMfD4zHj/QlkCw28yqVmSvjKSunjT7Yv//hjQSSxdzacI6Itg0e0qdUc8rbZf1TwXFweTy+fNp5AsnacflFM9Gu3m2PhjClykXnHd4b77L4KoGE7bqYHP9956D9ybbBDJXKz/buoCWhIIgD+Gh+C09evKjvluklSQnBw0MlxBJMMy28JEZEhmIpQqEYaaZeIpSKSAgJBCHoULd9+5l6eutpt3dZ+P8u+wWG2dlZmPFEJaZK1QkEZvr036Z7z9xsaZJ+jitsphpcIxDXitNvdvBk74v0Y/OkGJsXHdd4w4rsJsA5vzwiHYUym/b9i+Ks5KgNCERVWD/g5vNy36BjaEQZk3ZyNYmpZ91NIKjVNOfZbNIRsJJOtrpFlni10UNXYnbJQyAoU2OXfzxa+46y00D6CCUYi8aJaDDNVKbocAjLmO90GkSnlv6GXrERP5SqOZpx5+LomQvMlHcW1OOsSbrJBUP4foXlcI8AAAAAAAAAAACAKDBqBf4x9I6HBLDAMB79TGTsPoBF47dvJdK6QnCAlktuK6q9mIsA/vBOIoqqNMJmDNDwbT/N84aMvAEahlhLUd2HMfsPtHzyXan98o5aFJYIy/IJqg1YzmUkol97IpjltcqCkwAAAABJRU5ErkJggg==');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 80% 80%;
+      -moz-background-size: 80% 80%;
+  }
+  /*游戏规则 */
+  .rules-content{
+    position: absolute;
+    
+  }
+  .entry-num{
+    font-size: 36rpx;
+    color: #323232;
+  }
+  .entry-ipt{
+    width: 100%;
+    height: 80rpx;
+    border: 1rpx solid #00A1E9;
+    border-radius: 10rpx;
+    margin-top: 33rpx;
+  }
+  .phone-details{
+    width: 334rpx;
+    color: #666666;
+    font-size: 24rpx;
+    display: inline-block;
+    margin-top: 20rpx;
+  }
+  .phone-sub{
+      width: 100%;
+      height: 80rpx;
+      font-size: 24rpx;   
+      text-align: center;
+      /* margin-top: 32rpx */
+  }
+  .phone-sub button{
+    width: 280rpx;
+    height: 80rpx;
+    background:linear-gradient(-3deg,rgba(79,170,255,1),rgba(113,220,242,1));
+    border-radius:12rpx;
+    color: #fff;
+  }

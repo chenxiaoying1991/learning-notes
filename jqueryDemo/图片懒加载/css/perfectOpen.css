@@ -1,0 +1,112 @@
+.perfect-open-box {
+    width: 100%;
+    height: 100%;
+    background: url('../image/shiquan.png') no-repeat center;
+    background-size: 100% 100%;
+    /* text-align: center; */
+    position: relative;
+    padding-top: 2.09375rem;
+    box-sizing: border-box;
+}
+
+.digit {
+    position: absolute;
+    left: 5.4rem;
+    top: 2rem;
+    height: 7rem;
+    width: 12.5rem;
+    overflow: hidden;
+    font-size: 92px;
+    z-index: 4;
+    /* background: url('../image/result-num.png') top center repeat-y; */
+}
+.digit-one {
+    animation: slide infinite linear;
+    animation-duration: 5000ms;
+    
+}
+
+.digit-one img {
+    display: inline-block;
+    width: 100%;
+}
+
+@keyframes slide {
+    from {
+        transform: translateY(-17em);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.result-open {
+    width: 100%;
+    height: 15.625rem;
+    position: relative;
+}
+
+.result-open img.result-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15.625rem;
+    z-index: 2;
+}
+
+.paly-angin {
+    position: absolute;
+    left: 7rem;
+    top: 11.125rem;
+    width: 9rem;
+    height: 5.5rem;
+}
+
+.paly-angin img {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+/* 结果下的列表 */
+.result-list {
+    width: 100%;
+    margin-top: 2rem;
+    padding-left: .9375rem;
+    box-sizing: border-box;
+}
+.result-list ul li:nth-child(odd){
+    margin-top: -.625rem;
+}
+.result-list ul li:nth-child(even){
+    margin-left: 1rem;
+    margin-top: -0.425rem;
+}
+.result-list ul li:nth-of-type(1){
+    margin-top: 0rem;
+}
+.list-detail-left {
+    display: inline-block;
+    width: 2.03125rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    background: url(../image/result-num-white.png);
+    background-size: 100% 100%;
+    font-size: 1rem;
+    text-align: center;
+}
+.list-detail-left.active{
+    background: url(../image/result-num-gellow.png);
+    background-size: 100% 100%;
+}
+.result-list-detail span:nth-of-type(2){
+    display: inline-block;
+    padding: .28125rem .09375rem;
+    box-sizing: border-box;
+    font-size: .6875rem;
+    color: #fff;
+    width: 18.71875rem;
+    text-align: center;
+}

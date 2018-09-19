@@ -4,7 +4,7 @@
       "*.wxml": "html",
       "*.wxss": "css"
     },
-    "editor.fontSize": 18,
+    "editor.fontSize": 16,
     "[markdown]": {
       "editor.quickSuggestions": true
     },

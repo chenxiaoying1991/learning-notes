@@ -8,15 +8,14 @@
     </block>
   </swiper>
   <view class="btn-area">
-    <navigator url="/pages/qa/qa" hover-class="other-navigator-hover">无厘头问答</navigator>
-   <navigator url="/pages/qa/qa" hover-class="other-navigator-hover">无厘头问答</navigator>
-
+  <navigator url="/pages/qa/qa" hover-class="other-navigator-hover">无厘头问答</navigator>
+  <navigator url="/pages/qa/qa" hover-class="other-navigator-hover">无厘头问答</navigator>
+  
 
   </view>
-  <view>我猜猜</view>
-  <image src="{{list.listIcon}}"></image>
+  <button open-type='share'>分享</button>
   <view>你猜猜</view>
-  <image src="http://img04.tooopen.com/images/20130712/tooopen_17270713.jpg"></image>
+  <image src="/images/download.png"></image>
   <view>标题头部</view>
   <image src="http://img04.tooopen.com/images/20130617/tooopen_21241404.jpg"></image>
   <view>分开</view>

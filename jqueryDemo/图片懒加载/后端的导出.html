@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<button id="but">click</button>
+	</body>
+	<script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript">
+		var data = JSON.stringify({
+			"rows": "cpu,ram,按需,包年包月,商品类型",
+			"stringList": [
+				"1,1,0.1,1,标准型",
+				"1,2,0.2,2,标准型",
+				"1,1,0.5,5,高性能型"
+			]
+		});
+
+		var xhr = new XMLHttpRequest();
+		xhr.withCredentials = true;
+		xhr.responseType = 'blob';
+		xhr.addEventListener("readystatechange", function() {
+			//if(this.readyState === 4) {
+				if(xhr.readyState === 4 && xhr.status === 200) {
+					//var name = xhr.getResponseHeader("Content-disposition");
+					var filename = 'name.xlsx';
+
+					//var filename = name.substring(20, name.length);
+					var blob = new Blob([xhr.response], {
+						type: 'text/xlsx'
+					});
+					var csvUrl = URL.createObjectURL(blob);
+					var link = document.createElement('a');
+					link.href = csvUrl;
+					link.download = filename;
+					link.click();
+
+				}
+			//}
+		});
+
+		xhr.open("POST", "http://39ib3g.natappfree.cc/goods/exportGoodsPrice");
+		xhr.setRequestHeader("content-type", "application/json");
+		//xhr.setRequestHeader("user", "9b2b7fcc847945eca909a82983c3b3d9");
+		//xhr.setRequestHeader("cache-control", "no-cache");
+		//xhr.setRequestHeader("postman-token", "6feffa5b-cdd1-d91e-2d27-935663e12344");
+
+		xhr.send(data);
+		console.log("111");
+		//xhr.responseType = 'blob';
+		/*xhr.onreadystatechange = function() {
+			if(xhr.readyState === 4 && xhr.status === 200) {
+				var name = xhr.getResponseHeader("Content-disposition");
+				var filename = name.substring(20, name.length);
+				var blob = new Blob([xhr.response], {
+					type: 'text/xls'
+				});
+				var csvUrl = URL.createObjectURL(blob);
+				var link = document.createElement('a');
+				link.href = csvUrl;
+				link.download = filename;
+				link.click();
+
+			}
+		};*/
+	</script>
+
+</html>

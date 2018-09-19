@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <title>实用jQuery数字滚动摇奖老虎机抽奖</title>
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <style> 
+ 
+        .main_bg {
+            /* background: url(image/main_bg.jpg) top center no-repeat; */
+            height: 1000px;
+        } 
+
+        .main {
+            width: 1000px;
+            height: 1000px;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        /* .num_mask {
+            height: 184px;
+            width: 740px;
+            position: absolute;
+            left: 50%;
+            top: 340px;
+            margin-left: -370px;
+            z-index: 9;
+        } */
+
+        .num_box {
+            height: 450px;
+            width: 835px;
+            position: absolute;
+            left: 50%;
+            top: 340px;
+            margin-left: -370px;
+            z-index: 8;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .num {
+            background: url(image/num.png) top center repeat-y;
+            width: 126px;
+            height: 265px;
+            float: left;
+            margin-right: 6px;
+        }
+
+        .btn {
+            background: url(image/btn_start.png) 0px 0px no-repeat;
+            width: 264px;
+            height: 89px;
+            position: absolute;
+            left: 50%;
+            bottom: 50px;
+            margin-left: -132px;
+            cursor: pointer;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main_bg">
+        <div class="main">
+            <div class="num_box">
+                <div class="num"></div>
+                <!-- <div class="num"></div>
+                <div class="num"></div>
+                <div class="num"></div>
+                <div class="num"></div>
+                <div class="num"></div> -->
+                <div class="btn"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // function numRand() {
+        //     var rand = [9,1,7,3,5,1];
+        //     return rand;
+        // }
+        // var isBegin = false;
+        //     var u = 265;
+        //     $('.btn').click(function () {
+        //         if (isBegin) return false;
+        //         isBegin = true;
+        //         $(".num").css('backgroundPositionY', 0);
+        //         var num_arr = numRand();
+        //         //类名是.num的div,each遍历出来
+        //         $(".num").each(function (index) {
+        //             // 当前每一个盒子
+        //             var _num = $(this);
+        //             console.log(u * 60,u * num_arr[index]);
+        //                 _num.animate({
+        //                     backgroundPositionY: (u * 60) - (u * num_arr[index])                         
+        //                 }, {
+        //                     // 控制时间的长短
+        //                      duration: 100,
+        //                      easing: "easeInOutCirc",
+        //                     complete: function () {
+        //                         if (index == 2) isBegin = false;
+        //                     }
+        //                 });
+        //         });
+        //     });
+        //     $(".btn").click();
+
+
+
+            var $number = $(".num");
+            var u = 795;
+            /**
+            *	顺序滚动数字
+            *
+            * @param {jquery对象} ele	 操作的元素
+            * @param {number} num		滚动的位置	
+            * @param {Boolean} last	是否为最后滚动	
+            */
+            function showNum(ele, num) {
+                var y = (parseInt(num) * u);
+                console.log(y)
+                ele.animate({
+                    backgroundPositionY: String(y) + 'px'
+                }, 'easeInOutCirc','linear', function () {});
+            };
+            var m = 0;
+
+            // 构造一个对象来存储是否停止当前的动画；默认全部为false
+            var stopObj = {};
+            for (let i = 0; i < $number.length; i++) {
+                stopObj[i] = false;
+            }
+
+            // $number.each(function (params) {
+            //     var that = $(this);
+            //     setInterval(function () {
+            //         m++;
+            //         if (m > 9) {
+            //             m = 0
+            //         }
+            //         if (stopObj[that.index()]) return;
+            //         showNum(that, m);
+            //     }, 500);
+            // });
+            // 模拟数据请求；5s之后得到第二个框里面的结果；从0开始
+            // stopObj[5] 这个是根据一共有多少个盒子
+            setTimeout(() => {
+                // stopObj[0] = true;
+                //第一个参数：就是当前操作的这个元素   这个元素要和stopObj这个对象是对应的一致的
+                // 第二个参数：就是图片上滚动到的位置,展示的号码
+                // 第三个参数：
+                showNum($number.eq(0), 1);
+            }, 1000);
+    </script>
+   
+</body>
+
+</html>

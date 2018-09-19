@@ -1,16 +1,15 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/football/football",
-    "pages/qa/qa"
+    "pages/football/football"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "winchain-小程序",
-    "navigationBarTextStyle":"#000",
-    "enablePullDownRefresh":true
+    "navigationBarTextStyle": "#000",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "color": "#000",
@@ -26,14 +25,13 @@
       },
       {
         "pagePath": "pages/logs/logs",
-        "iconPath": "images/title_01.png",
-        "selectedIconPath": "images/title_01.png",
+        "iconPath": "images/love7.png",
+        "selectedIconPath": "images/love7.png",
         "text": "Lucky"
       },
       {
         "pagePath": "pages/football/football",
         "iconPath": "images/title_01.png",
-        "selectedIconPath": "images/title_01.png",
         "text": "LuckyWin"
       }
     ]

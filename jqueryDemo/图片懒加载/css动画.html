@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动画</title>
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+<style>
+    .box1 {
+        width: 100px;
+        height: 10px;
+        margin: 100px auto;
+        background: olive;
+        font-size: 20px;
+        transition: all 2s;
+     
+    }
+
+    .box1.active1 {
+        transform:rotate(30deg) translate(150px, -100px);
+        -ms-transform:rotate(30deg) translate(150px, -100px);
+        -moz-transform:rotate(30deg) translate(150px, -100px);
+        -webkit-transform:rotate(30deg) translate(150px, -100px);
+        -o-transform:rotate(30deg) translate(150px, -100px);
+
+    }
+
+</style>
+
+<body>
+    <!-- 
+        transform变形改变的 包括：旋转rotate 扭曲skew 缩放scale 移动translate还有matrix
+        1,旋转：transform:rotate(30deg) 正值是顺时针  负值是逆时针
+        2，移动：translate >>>移动分为三种情况 translate(x,y) translateX x轴方向  translateY y轴方向
+                transform:translate(100px,20px)  transform:translateY(20px) transform:translateX(100px)
+        3,缩放：  transform:scale(2,1.5)   
+        4,扭曲：transform:skew(30deg,10deg)   
+     -->
+    <div class="box1"></div>
+    <span class="box2">这个是触发的盒子</span>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script>
+        $(".box2").click(function () {
+            console.log(111)
+            $('.box1').animate({
+
+            },function () {
+                $(this).toggleClass('active1');
+        
+            })
+
+        });
+    </script>
+</body>
+
+</html>

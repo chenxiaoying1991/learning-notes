@@ -18,7 +18,7 @@ Page({
       console.log(res.target)
     }
     return {
-      title: '自定义转发标题',
+      title: 'winchain',
       path: '/pages/logs/logs.wxml'
     }
   },
@@ -37,11 +37,6 @@ Page({
       },
       success: function (res) {
         console.log(res.data)
-        that.setData(
-          {
-            list: res.data[0]
-          }
-        )
 
       }
     })

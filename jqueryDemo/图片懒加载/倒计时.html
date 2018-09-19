@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="boxTime">[<span id="timeSpan">00:00:00</span>]</div>
+    <script type="text/javascript">
+        //补零：
+        function addZero(value) {
+            return value < 10 ? "0" + value : value;
+        }
+        //写个方法：
+        function getRemainTime() {//这个函数是获取剩下的时间
+            //先把目标时间和现在时间的毫秒数求出来
+            var nowTime = new Date();
+            var tarTime = '1536129056';
+            var spanTime = tarTime - parseInt( nowTime.getTime()/1000).toString();//2492972496毫秒数
+            console.log(tarTime,nowTime.getTime())
+            //然后判断一下  当前时间已经超过目标时间 就让这个方法停止
+            if (spanTime < 0) {
+                window.clearInterval(timer);
+                return;
+            }
+            console.log(new Date(),parseInt( nowTime.getTime()/1000).toString())
+            console.log(spanTime)
+            //计算总相差时间中包含多少小时
+            var hour = Math.floor(spanTime / (1000 * 60 * 60));
+            //然后计算剩下的毫秒数中包含多少分钟
+            spanTime = spanTime - (hour * 60 * 60 * 1000);
+            var minute = Math.floor(spanTime / (1000 * 60));
+            //然后计算剩下的毫秒数中包含多少秒
+            spanTime = spanTime - (minute * 60 * 1000);
+            var second = Math.floor(spanTime / 1000);
+            return addZero(hour) + ":" + addZero(minute) + ":" + addZero(second);
+    
+        }
+        //想用谁就要获取谁
+        var timeSpan = document.getElementById("timeSpan");
+        timeSpan.innerHTML = getRemainTime();
+    
+        var timer = window.setInterval(function () {
+            timeSpan.innerHTML = getRemainTime();
+        }, 1000);
+
+        //微信中的倒计时
+     var totalSecond = that.data.within;
+          var interval = setInterval(function () {
+            // 秒数
+            var second = totalSecond;
+
+            // 小时位
+            var hr = Math.floor((second - day * 3600 * 24) / 3600);
+            var hrStr = hr.toString();
+            if (hrStr.length == 1) hrStr = '0' + hrStr;
+       
+            // 分钟位
+            var min = Math.floor((second - day * 3600 *24 - hr * 3600) / 60);
+            var minStr = min.toString();
+            if (minStr.length == 1) minStr = '0' + minStr;
+       
+            // 秒位
+            var sec = second - day * 3600 * 24 - hr * 3600 - min*60;
+            var secStr = sec.toString();
+            if (secStr.length == 1) secStr = '0' + secStr;
+            var receive_time = hrStr+":"+minStr+":"+secStr
+            that.setData({
+              receive_time:receive_time
+            });
+            totalSecond--;
+            if (totalSecond < 0) {
+              clearInterval(interval);
+              wx.showToast({
+                title: '活动已结束',
+              });
+              this.setData({
+                receive_time:'00:00:00'
+              });
+            }
+          }, 1000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </script>   
+</body>
+</html>
+
+
+
+

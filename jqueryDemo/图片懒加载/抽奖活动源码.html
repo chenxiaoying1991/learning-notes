@@ -1,0 +1,494 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/rotaryDraw.js"></script>
+    <title>转盘抽奖</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background: #f03200;
+        }
+
+        .box {
+            position: relative;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .box .img01 {
+            width: 100%;
+        }
+
+        .box .drawBtn {
+            position: absolute;
+            width: 10rem;
+            height: auto;
+            left: 50%;
+            margin-left: -5rem;
+        }
+
+        .box1 {
+            position: relative;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .box1 .img01 {
+            width: 100%;
+        }
+
+        .box1 .drawBtn2 {
+            position: absolute;
+            width: 10rem;
+            height: auto;
+            left: 50%;
+            margin-left: -5rem;
+        }
+    </style>
+    <style>
+        .rotarynew8781 {
+            transform: rotate(2160deg);
+            -ms-transform: rotate(2160deg);
+            -moz-transform: rotate(2160deg);
+            -webkit-transform: rotate(2160deg);
+            -o-transform: rotate(2160deg);
+            transition: transform 3s ease;
+            -moz-transition: -moz-transform 3s ease;
+            -webkit-transition: -webkit-transform 3s ease;
+            -o-transition: -o-transform 3s ease;
+        }
+
+        .rotarynew8781stop {
+            transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+        }
+
+        .rotarynew8782 {
+            transform: rotate(2205deg);
+            -ms-transform: rotate(2205deg);
+            -moz-transform: rotate(2205deg);
+            -webkit-transform: rotate(2205deg);
+            -o-transform: rotate(2205deg);
+            transition: transform 3s ease;
+            -moz-transition: -moz-transform 3s ease;
+            -webkit-transition: -webkit-transform 3s ease;
+            -o-transition: -o-transform 3s ease;
+        }
+
+        .rotarynew8782stop {
+            transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+        }
+
+        .rotarynew8783 {
+            transform: rotate(2250deg);
+            -ms-transform: rotate(2250deg);
+            -moz-transform: rotate(2250deg);
+            -webkit-transform: rotate(2250deg);
+            -o-transform: rotate(2250deg);
+            transition: transform 3s ease;
+            -moz-transition: -moz-transform 3s ease;
+            -webkit-transition: -webkit-transform 3s ease;
+            -o-transition: -o-transform 3s ease;
+        }
+
+        .rotarynew8783stop {
+            transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+        }
+
+        .rotarynew8784 {
+            transform: rotate(2295deg);
+            -ms-transform: rotate(2295deg);
+            -moz-transform: rotate(2295deg);
+            -webkit-transform: rotate(2295deg);
+            -o-transform: rotate(2295deg);
+            transition: transform 3s ease;
+            -moz-transition: -moz-transform 3s ease;
+            -webkit-transition: -webkit-transform 3s ease;
+            -o-transition: -o-transform 3s ease;
+        }
+
+        .rotarynew8784stop {
+            transform: rotate(135deg);
+            -ms-transform: rotate(135deg);
+            -moz-transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+            -o-transform: rotate(135deg);
+        }
+
+        .rotarynew8785 {
+            transform: rotate(2340deg);
+            -ms-transform: rotate(2340deg);
+            -moz-transform: rotate(2340deg);
+            -webkit-transform: rotate(2340deg);
+            -o-transform: rotate(2340deg);
+            transition: transform 3s ease;
+            -moz-transition: -moz-transform 3s ease;
+            -webkit-transition: -webkit-transform 3s ease;
+            -o-transition: -o-transform 3s ease;
+        }
+
+        .rotarynew8785stop {
+            transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            -moz-transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
+        }
+
+        .rotarynew8786 {
+            transform: rotate(2385deg);
+            -ms-transform: rotate(2385deg);
+            -moz-transform: rotate(2385deg);
+            -webkit-transform: rotate(2385deg);
+            -o-transform: rotate(2385deg);
+            transition: transform 3s ease;
+            -moz-transition: -moz-transform 3s ease;
+            -webkit-transition: -webkit-transform 3s ease;
+            -o-transition: -o-transform 3s ease;
+        }
+
+
+        .rotarynew8787 {
+            transform: rotate(2430deg);
+            -ms-transform: rotate(2430deg);
+            -moz-transform: rotate(2430deg);
+            -webkit-transform: rotate(2430deg);
+            -o-transform: rotate(2430deg);
+            transition: transform 3s ease;
+            -moz-transition: -moz-transform 3s ease;
+            -webkit-transition: -webkit-transform 3s ease;
+            -o-transition: -o-transform 3s ease;
+        }
+
+        .rotarynew8787stop {
+            transform: rotate(270deg);
+            -ms-transform: rotate(270deg);
+            -moz-transform: rotate(270deg);
+            -webkit-transform: rotate(270deg);
+            -o-transform: rotate(270deg);
+        }
+
+        .rotarynew8788 {
+            transform: rotate(2475deg);
+            -ms-transform: rotate(2475deg);
+            -moz-transform: rotate(2475deg);
+            -webkit-transform: rotate(2475deg);
+            -o-transform: rotate(2475deg);
+            transition: transform 3s ease;
+            -moz-transition: -moz-transform 3s ease;
+            -webkit-transition: -webkit-transform 3s ease;
+            -o-transition: -o-transform 3s ease;
+        }
+
+        .rotarynew8788stop {
+            transform: rotate(315deg);
+            -ms-transform: rotate(315deg);
+            -moz-transform: rotate(315deg);
+            -webkit-transform: rotate(315deg);
+            -o-transform: rotate(315deg);
+        }
+    </style>
+    <style>
+        .rotarynew3511 {
+            transform: rotate(2160deg);
+            -ms-transform: rotate(2160deg);
+            -moz-transform: rotate(2160deg);
+            -webkit-transform: rotate(2160deg);
+            -o-transform: rotate(2160deg);
+            transition: transform 3s ease;
+            -moz-transition: -moz-transform 3s ease;
+            -webkit-transition: -webkit-transform 3s ease;
+            -o-transition: -o-transform 3s ease;
+        }
+
+        .rotarynew3511stop {
+            transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+        }
+
+        .rotarynew3512 {
+            transform: rotate(2190deg);
+            -ms-transform: rotate(2190deg);
+            -moz-transform: rotate(2190deg);
+            -webkit-transform: rotate(2190deg);
+            -o-transform: rotate(2190deg);
+            transition: transform 3s ease;
+            -moz-transition: -moz-transform 3s ease;
+            -webkit-transition: -webkit-transform 3s ease;
+            -o-transition: -o-transform 3s ease;
+        }
+
+        .rotarynew3512stop {
+            transform: rotate(30deg);
+            -ms-transform: rotate(30deg);
+            -moz-transform: rotate(30deg);
+            -webkit-transform: rotate(30deg);
+            -o-transform: rotate(30deg);
+        }
+
+        .rotarynew3513 {
+            transform: rotate(2220deg);
+            -ms-transform: rotate(2220deg);
+            -moz-transform: rotate(2220deg);
+            -webkit-transform: rotate(2220deg);
+            -o-transform: rotate(2220deg);
+            transition: transform 3s ease;
+            -moz-transition: -moz-transform 3s ease;
+            -webkit-transition: -webkit-transform 3s ease;
+            -o-transition: -o-transform 3s ease;
+        }
+
+        .rotarynew3513stop {
+            transform: rotate(60deg);
+            -ms-transform: rotate(60deg);
+            -moz-transform: rotate(60deg);
+            -webkit-transform: rotate(60deg);
+            -o-transform: rotate(60deg);
+        }
+
+        .rotarynew3514 {
+            transform: rotate(2250deg);
+            -ms-transform: rotate(2250deg);
+            -moz-transform: rotate(2250deg);
+            -webkit-transform: rotate(2250deg);
+            -o-transform: rotate(2250deg);
+            transition: transform 3s ease;
+            -moz-transition: -moz-transform 3s ease;
+            -webkit-transition: -webkit-transform 3s ease;
+            -o-transition: -o-transform 3s ease;
+        }
+
+        .rotarynew3514stop {
+            transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+        }
+
+        .rotarynew3515 {
+            transform: rotate(2280deg);
+            -ms-transform: rotate(2280deg);
+            -moz-transform: rotate(2280deg);
+            -webkit-transform: rotate(2280deg);
+            -o-transform: rotate(2280deg);
+            transition: transform 3s ease;
+            -moz-transition: -moz-transform 3s ease;
+            -webkit-transition: -webkit-transform 3s ease;
+            -o-transition: -o-transform 3s ease;
+        }
+
+        .rotarynew3515stop {
+            transform: rotate(120deg);
+            -ms-transform: rotate(120deg);
+            -moz-transform: rotate(120deg);
+            -webkit-transform: rotate(120deg);
+            -o-transform: rotate(120deg);
+        }
+
+        .rotarynew3516 {
+            transform: rotate(2310deg);
+            -ms-transform: rotate(2310deg);
+            -moz-transform: rotate(2310deg);
+            -webkit-transform: rotate(2310deg);
+            -o-transform: rotate(2310deg);
+            transition: transform 3s ease;
+            -moz-transition: -moz-transform 3s ease;
+            -webkit-transition: -webkit-transform 3s ease;
+            -o-transition: -o-transform 3s ease;
+        }
+
+        .rotarynew3516stop {
+            transform: rotate(150deg);
+            -ms-transform: rotate(150deg);
+            -moz-transform: rotate(150deg);
+            -webkit-transform: rotate(150deg);
+            -o-transform: rotate(150deg);
+        }
+
+        .rotarynew3517 {
+            transform: rotate(2340deg);
+            -ms-transform: rotate(2340deg);
+            -moz-transform: rotate(2340deg);
+            -webkit-transform: rotate(2340deg);
+            -o-transform: rotate(2340deg);
+            transition: transform 3s ease;
+            -moz-transition: -moz-transform 3s ease;
+            -webkit-transition: -webkit-transform 3s ease;
+            -o-transition: -o-transform 3s ease;
+        }
+
+        .rotarynew3517stop {
+            transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            -moz-transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
+        }
+
+        .rotarynew3518 {
+            transform: rotate(2370deg);
+            -ms-transform: rotate(2370deg);
+            -moz-transform: rotate(2370deg);
+            -webkit-transform: rotate(2370deg);
+            -o-transform: rotate(2370deg);
+            transition: transform 3s ease;
+            -moz-transition: -moz-transform 3s ease;
+            -webkit-transition: -webkit-transform 3s ease;
+            -o-transition: -o-transform 3s ease;
+        }
+
+        .rotarynew3518stop {
+            transform: rotate(210deg);
+            -ms-transform: rotate(210deg);
+            -moz-transform: rotate(210deg);
+            -webkit-transform: rotate(210deg);
+            -o-transform: rotate(210deg);
+        }
+
+        .rotarynew3519 {
+            transform: rotate(2400deg);
+            -ms-transform: rotate(2400deg);
+            -moz-transform: rotate(2400deg);
+            -webkit-transform: rotate(2400deg);
+            -o-transform: rotate(2400deg);
+            transition: transform 3s ease;
+            -moz-transition: -moz-transform 3s ease;
+            -webkit-transition: -webkit-transform 3s ease;
+            -o-transition: -o-transform 3s ease;
+        }
+
+        .rotarynew3519stop {
+            transform: rotate(240deg);
+            -ms-transform: rotate(240deg);
+            -moz-transform: rotate(240deg);
+            -webkit-transform: rotate(240deg);
+            -o-transform: rotate(240deg);
+        }
+
+        .rotarynew35110 {
+            transform: rotate(2430deg);
+            -ms-transform: rotate(2430deg);
+            -moz-transform: rotate(2430deg);
+            -webkit-transform: rotate(2430deg);
+            -o-transform: rotate(2430deg);
+            transition: transform 3s ease;
+            -moz-transition: -moz-transform 3s ease;
+            -webkit-transition: -webkit-transform 3s ease;
+            -o-transition: -o-transform 3s ease;
+        }
+
+        .rotarynew35110stop {
+            transform: rotate(270deg);
+            -ms-transform: rotate(270deg);
+            -moz-transform: rotate(270deg);
+            -webkit-transform: rotate(270deg);
+            -o-transform: rotate(270deg);
+        }
+
+        .rotarynew35111 {
+            transform: rotate(2460deg);
+            -ms-transform: rotate(2460deg);
+            -moz-transform: rotate(2460deg);
+            -webkit-transform: rotate(2460deg);
+            -o-transform: rotate(2460deg);
+            transition: transform 3s ease;
+            -moz-transition: -moz-transform 3s ease;
+            -webkit-transition: -webkit-transform 3s ease;
+            -o-transition: -o-transform 3s ease;
+        }
+
+        .rotarynew35111stop {
+            transform: rotate(300deg);
+            -ms-transform: rotate(300deg);
+            -moz-transform: rotate(300deg);
+            -webkit-transform: rotate(300deg);
+            -o-transform: rotate(300deg);
+        }
+
+        .rotarynew35112 {
+            transform: rotate(2490deg);
+            -ms-transform: rotate(2490deg);
+            -moz-transform: rotate(2490deg);
+            -webkit-transform: rotate(2490deg);
+            -o-transform: rotate(2490deg);
+            transition: transform 3s ease;
+            -moz-transition: -moz-transform 3s ease;
+            -webkit-transition: -webkit-transform 3s ease;
+            -o-transition: -o-transform 3s ease;
+        }
+
+        .rotarynew35112stop {
+            transform: rotate(330deg);
+            -ms-transform: rotate(330deg);
+            -moz-transform: rotate(330deg);
+            -webkit-transform: rotate(330deg);
+            -o-transform: rotate(330deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box1">
+        <img src="image/img_04.png" class="img01" alt="">
+        <img src="image/pointer2.png" class="drawBtn2 rotarynew3511stop">
+    </div>
+    <script>
+        $(".box1 .img01").load(function () {
+            var obj = $(".drawBtn2");
+            var hei = $(this).height();
+            var hei2 = obj.height();
+            obj.css("top", (hei - hei2) / 2);
+        });
+    </script>
+    <script>
+        //share份额[数字没有默认],
+        //speed速度[单位s,最小0.1s],
+        //velocityCurve速度曲线[linear匀速，ease慢快慢，ease-in慢慢开始，ease-out慢慢结束，ease-in-out慢快慢等，用的是css3的速度曲线],可以不写，ease默认值；
+        //callback回调函数
+        //weeks几周[默认2周，可以不写]
+
+        //几份和回调函数这两个参数是必填
+        function callbackB(ind) {
+            alert("第二个回调" + ind);
+        };
+        var newdraw2 = new turntableDraw('.drawBtn2', {
+            share: 36,
+            speed: "3s",
+            velocityCurve: "ease",
+            weeks: 6,
+            callback: function (num) {
+                callbackB(num);
+            },
+        });
+        $(".drawBtn2").click(function (event) {
+            //ajax
+            newdraw2.goto(10);
+        });
+    </script>
+
+</body>
+
+</html>

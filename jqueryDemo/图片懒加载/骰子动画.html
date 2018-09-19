@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wrap {
+            position: relative;
+            /*最外层设置为每一帧需要显示的骰子的宽高*/
+            width: 1.51rem;
+            height: 1.59rem;
+        }
+
+        .dice {
+            /*设定骰子的宽高*/
+            width: 1.51rem;
+            height: 1.59rem;
+
+            cursor: pointer;
+
+            background: url("image/shaizi.png") no-repeat;
+            -webkit-background-size: 1.51rem auto;
+            background-size: 1.51rem auto;
+        }
+
+        /*对每一帧最外层的背景图进行位移，位移的数据可以从生成雪碧图的网站中的css文件中得出。由于此处生成的雪碧图是垂直方向的，因此只需要改变背景图y轴的位移，即可以改变下一帧的显示内容。后三帧为骰子转动过程中的作了模糊处理的图片。*/
+        .dice_1 {
+            background-position: 0 0;
+        }
+
+        .dice_2 {
+            background-position: 0 -1.59rem;
+        }
+
+        .dice_3 {
+            background-position: 0 -3.18rem;
+        }
+
+        .dice_4 {
+            background-position: 0 -4.77rem;
+        }
+
+        .dice_5 {
+            background-position: 0 -6.36rem;
+        }
+
+        .dice_6 {
+            background-position: 0 -7.95rem;
+        }
+
+        .dice_t {
+            background-position: 0 -9.54rem;
+        }
+
+        .dice_s {
+            background-position: 0 -11.13rem;
+        }
+
+        .dice_e {
+            background-position: 0 -12.72rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="diceArea">
+        <div class="wrap">
+            <div id="dice" class="dice dice_1"></div>
+        </div>
+    </div>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script>
+        var dice = $("#dice");
+        dice.click(function () {
+
+            
+            var num = Math.floor(Math.random() * 6 + 1); //生成随机数1-6
+            dice.attr("class", "dice"); //清除上次动画后的点数
+            dice.css('cursor', 'default');
+            // 骰子动画
+            dice.animate({
+                left: '+2px'
+            }, 100, function () {
+                dice.addClass("dice_t");
+            }).delay(200).animate({
+                top: '-2px'
+            }, 100, function () {
+                dice.removeClass("dice_t").addClass("dice_s");
+            }).delay(200).animate({
+                opacity: 'show'
+            }, 600, function () {
+                dice.removeClass("dice_s").addClass("dice_e");
+            }).delay(100).animate({
+                left: '-2px',
+                top: '2px'
+            }, 100, function () {
+                dice.removeClass("dice_e").addClass("dice_" + num);
+                dice.css('cursor', 'pointer');
+            })
+        })
+    </script>
+</body>
+
+</html>

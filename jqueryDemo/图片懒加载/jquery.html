@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+<style>
+    .digit {
+    position: absolute;
+    left: 5.4rem;
+    top: 2rem;
+    height: 7rem;
+    width: 12.5rem;
+    overflow: hidden;
+    font-size: 92px;
+    background: #ccc;
+}
+.digit-one {
+    animation: slide infinite linear;
+    animation-duration: 5000ms;
+    width: 100%;
+    height: 106.5625rem;
+    background: url('image/result-num.png') top center repeat-y;
+}
+
+@keyframes slide {
+    from {
+        transform: translateY(-98rem);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+</style>
+
+<body>
+    <div class="digit">
+        <div class="digit-one">
+        </div>
+    </div>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script>
+         var $number = $(".digit-one");
+            var u = 3140;
+            /**
+            *	顺序滚动数字
+            *
+            * @param {jquery对象} ele	 操作的元素
+            * @param {number} num		滚动的位置	
+            * @param {Boolean} last	是否为最后滚动	
+            */
+            function showNum(ele, num) {
+                var y = (parseInt(num) * u);
+                ele.animate({
+                    backgroundPositionY: String(y) + 'px'
+                }, 'easeInOutCirc','linear', function () {});
+            };
+            // 构造一个对象来存储是否停止当前的动画；默认全部为false
+            var stopObj = {};
+            for (let i = 0; i < $number.length; i++) {
+                stopObj[i] = false;
+            }
+            // 模拟数据请求；5s之后得到第二个框里面的结果；从0开始
+            // stopObj[5] 这个是根据一共有多少个盒子
+            // setTimeout(() => {
+            //     showNum($number.eq(0), 1);
+            // }, 3000);
+    </script>
+</body>
+
+</html>
